@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Hafiz Zayan Sidduqui - Islamic Trader">
+
+    <title>Hafiz Zayan Sidduqui | Islamic Trader</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050505;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           ANIMATED BACKGROUND
+        ===================================================== */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(0, 255, 170, 0.10),
+                    transparent 35%
+                ),
+                #050505;
+        }
+
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.35;
+
+            animation: float 10s ease-in-out infinite;
+        }
+
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+
+            background: #00ff9d;
+
+            top: -100px;
+            left: -100px;
+        }
+
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+
+            background: #0077ff;
+
+            right: -80px;
+            top: 35%;
+
+            animation-delay: -3s;
+        }
+
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+
+            background: #00d084;
+
+            left: 30%;
+            bottom: -180px;
+
+            animation-delay: -6s;
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: translate3d(30px, -40px, 0);
+            }
+
+        }
+
+
+        /* =====================================================
+           PARTICLES
+        ===================================================== */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+
+        .particle {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.6);
+
+            animation: particleMove linear infinite;
+        }
+
+
+        @keyframes particleMove {
+
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: min(100% - 30px, 680px);
+
+            margin: auto;
+
+            padding: 45px 0 30px;
+        }
+
+
+        /* =====================================================
+           TOP BADGE
+        ===================================================== */
+
+        .top-badge {
+
+            width: fit-content;
+
+            margin: auto;
+
+            margin-bottom: 30px;
+
+            padding: 9px 17px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 100px;
+
+            background: rgba(255,255,255,0.04);
+
+            backdrop-filter: blur(15px);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #bfffe9;
+
+            box-shadow:
+                0 0 25px rgba(0,255,170,0.08);
+        }
+
+
+        .live-dot {
+
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            margin-right: 8px;
+
+            background: #00ff9d;
+
+            box-shadow:
+                0 0 12px #00ff9d;
+
+            animation: pulse 1.5s infinite;
+        }
+
+
+        @keyframes pulse {
+
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =====================================================
+           PROFILE SECTION
+        ===================================================== */
+
+        .profile-section {
+
+            text-align: center;
+
+            padding: 20px 0 30px;
+        }
+
+
+        /* =====================================================
+           PROFILE IMAGE
+        ===================================================== */
+
+        .profile-image-wrapper {
+
+            position: relative;
+
+            width: 145px;
+            height: 145px;
+
+            margin: auto;
+        }
+
+
+        .profile-ring {
+
+            position: absolute;
+
+            inset: -7px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    #00ff9d,
+                    #ffffff,
+                    #00aaff,
+                    #00ff9d
+                );
+
+            animation:
+                rotateRing 6s linear infinite;
+        }
+
+
+        .profile-ring::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 3px;
+
+            background: #050505;
+
+            border-radius: 50%;
+        }
+
+
+        @keyframes rotateRing {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        .profile-image {
+
+            position: absolute;
+
+            inset: 3px;
+
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            z-index: 2;
+
+            border: 4px solid #080808;
+        }
+
+
+        .verified {
+
+            position: absolute;
+
+            right: 4px;
+            bottom: 8px;
+
+            width: 30px;
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #00d084;
+
+            color: #000;
+
+            font-weight: 900;
+
+            z-index: 5;
+
+            border: 4px solid #050505;
+        }
+
+
+        /* =====================================================
+           TITLE
+        ===================================================== */
+
+        h1 {
+
+            margin-top: 25px;
+
+            font-size:
+                clamp(27px, 6vw, 42px);
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #b9ffe8,
+                    #ffffff
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .username {
+
+            margin-top: 8px;
+
+            font-size: 12px;
+
+            color: #6efec2;
+
+            letter-spacing: 2px;
+
+            font-weight: 600;
+        }
+
+
+        .bio {
+
+            margin: 22px auto 0;
+
+            max-width: 570px;
+
+            color: #a6a6a6;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+
+        .bio strong {
+            color: #ffffff;
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 30px;
+
+            margin: 27px 0;
+        }
+
+
+        .stat {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+        }
+
+
+        .stat strong {
+
+            font-size: 25px;
+
+            color: #ffffff;
+        }
+
+
+        .stat span {
+
+            font-size: 9px;
+
+            color: #777;
+
+            letter-spacing: 1.5px;
+
+            font-weight: 700;
+        }
+
+
+        .stat-divider {
+
+            width: 1px;
+
+            height: 40px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    #555,
+                    transparent
+                );
+        }
+
+
+        /* =====================================================
+           MAIN TELEGRAM BUTTON
+        ===================================================== */
+
+        .main-button {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            width: 100%;
+
+            padding: 18px 22px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00f59a,
+                    #00bd77
+                );
+
+            color: #00140d;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.5px;
+
+            box-shadow:
+                0 12px 40px
+                rgba(0,255,157,0.18);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+            overflow: hidden;
+        }
+
+
+        .main-button:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 18px 50px
+                rgba(0,255,157,0.3);
+        }
+
+
+        .telegram-icon {
+            font-size: 20px;
+        }
+
+
+        .arrow {
+
+            position: absolute;
+
+            right: 20px;
+
+            font-size: 20px;
+        }
+
+
+        .cta-text {
+
+            margin-top: 14px;
+
+            font-size: 11px;
+
+            color: #777;
+        }
+
+
+        .cta-text strong {
+            color: #00e99a;
+        }
+
+
+        /* =====================================================
+           FEATURES
+        ===================================================== */
+
+        .features {
+
+            display: grid;
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+
+        .feature-card {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 17px;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.015)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(15px);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .feature-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(0,255,157,0.35);
+        }
+
+
+        .feature-icon {
+
+            min-width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 13px;
+
+            background:
+                rgba(0,255,157,0.08);
+
+            font-size: 22px;
+        }
+
+
+        .feature-card h3 {
+
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .feature-card p {
+
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           BOTTOM CTA
+        ===================================================== */
+
+        .bottom-cta {
+
+            position: relative;
+
+            overflow: hidden;
+
+            margin-top: 20px;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            border:
+                1px solid
+                rgba(0,255,157,0.12);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,255,157,0.08),
+                    rgba(255,255,255,0.02)
+                );
+        }
+
+
+        .bottom-cta h2 {
+
+            font-size: 24px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .bottom-cta p {
+
+            font-size: 12px;
+
+            color: #777;
+
+            margin-bottom: 20px;
+        }
+
+
+        .secondary-button {
+
+            display: inline-block;
+
+            padding: 13px 24px;
+
+            border-radius: 100px;
+
+            background: #ffffff;
+
+            color: #000000;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition: 0.25s;
+        }
+
+
+        .secondary-button:hover {
+
+            transform: scale(1.05);
+
+            background: #00ff9d;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px 0 10px;
+
+            color: #555;
+
+            font-size: 10px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 500px) {
+
+            .container {
+
+                width:
+                    min(100% - 24px, 680px);
+
+                padding-top: 30px;
+            }
+
+
+            .profile-image-wrapper {
+
+                width: 125px;
+
+                height: 125px;
+            }
+
+
+            h1 {
+
+                font-size: 27px;
+            }
+
+
+            .bio {
+
+                font-size: 12px;
+            }
+
+
+            .stats {
+
+                gap: 20px;
+            }
+
+
+            .stat strong {
+
+                font-size: 21px;
+            }
+
+
+            .main-button {
+
+                padding: 17px 15px;
+
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background">
+
+        <div class="orb orb-1"></div>
+
+        <div class="orb orb-2"></div>
+
+        <div class="orb orb-3"></div>
+
+    </div>
+
+
+    <!-- Animated particles -->
+
+    <div class="particles"></div>
+
+
+    <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
+
+    <main class="container">
+
+
+        <!-- =================================================
+             TOP BADGE
+        ================================================== -->
+
+        <div class="top-badge">
+
+            <span class="live-dot"></span>
+
+            ISLAMIC TRADER
+
+        </div>
+
+
+        <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+        <section class="profile-section">
+
+
+            <!-- Profile Photo -->
+
+            <div class="profile-image-wrapper">
+
+                <div class="profile-ring"></div>
+
+
+                <!--
+                    IMPORTANT:
+                    profile.jpg ko index.html ke same folder
+                    mein rakhein.
+                -->
+
+                <img
+                    src="profile.jpg"
+                    alt="Hafiz Zayan Sidduqui"
+                    class="profile-image"
+                >
+
+
+                <div class="verified">
+                    ✓
+                </div>
+
+            </div>
+
+
+            <!-- Name -->
+
+            <h1>
+                HAFIZ ZAYAN SIDDUQUI
+            </h1>
+
+
+            <!-- Username -->
+
+            <div class="username">
+                @HAFIZZAYANSIDDUQUI
+            </div>
+
+
+            <!-- Bio -->
+
+            <p class="bio">
+
+                SUBHAAN-ALLAHI-WA-BIHAMDIHI 🕋
+
+                <br>
+
+                ALHAMDULILLAH FOR EVERYTHING 💖
+
+                <br>
+
+                <strong>
+                    ISLAMIC TRADER 📈📊
+                </strong>
+
+            </p>
+
+
+            <!-- =================================================
+                 STATS
+            ================================================== -->
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <strong>
+                        8+
+                    </strong>
+
+                    <span>
+                        YEARS EXPERIENCE
+                    </span>
+
+                </div>
+
+
+                <div class="stat-divider"></div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        40K+
+                    </strong>
+
+                    <span>
+                        INVESTORS
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 TELEGRAM BUTTON
+            ================================================== -->
+
+            <a
+                href="https://t.me/+z1L5BvfoIQQ0ZDA1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="main-button"
+            >
+
+                <span class="telegram-icon">
+                    ✈
+                </span>
+
+                JOIN TELEGRAM CHANNEL
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <p class="cta-text">
+
+                💌 DM <strong>"YES"</strong> TO INVEST WITH ME
+
+            </p>
+
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURES
+        ================================================== -->
+
+        <section class="features">
+
+
+            <!-- Card 1 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎁
+                </div>
+
+                <div>
+
+                    <h3>
+                        Free Resources & Guides
+                    </h3>
+
+                    <p>
+                        Learn trading strategies, market insights
+                        and useful resources.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 2 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Live Market Updates
+                    </h3>
+
+                    <p>
+                        Get important market updates and
+                        trading information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 3 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <div>
+
+                    <h3>
+                        Direct Telegram Updates
+                    </h3>
+
+                    <p>
+                        Get updates directly on Telegram
+                        without missing important information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             BOTTOM CTA
+        ================================================== -->
+
+        <section class="bottom-cta">
+
+
+            <h2>
+                Ready To Start?
+            </h2>
+
+
+            <p>
+                Join our Telegram community and stay updated.
+            </p>
+
+
+            <a
+                href="https://t.me/+z1L5BvfoIQQ0ZDA1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="secondary-button"
+            >
+                JOIN NOW →
+            </a>
+
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            <p>
+                ©
+                <span id="year"></span>
+                Hafiz Zayan Sidduqui
+            </p>
+
+            <p>
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           CURRENT YEAR
+        ================================================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+
+        /* =================================================
+           BACKGROUND PARTICLES
+        ================================================== */
+
+        const particleContainer =
+            document.querySelector(".particles");
+
+
+        for (let i = 0; i < 45; i++) {
+
+            const particle =
+                document.createElement("span");
+
+
+            particle.classList.add(
+                "particle"
+            );
+
+
+            particle.style.left =
+                Math.random() * 100 + "%";
+
+
+            particle.style.animationDuration =
+                (Math.random() * 10 + 8) + "s";
+
+
+            particle.style.animationDelay =
+                (Math.random() * 10) + "s";
+
+
+            const size =
+                Math.random() * 3 + 1;
+
+
+            particle.style.width =
+                size + "px";
+
+
+            particle.style.height =
+                size + "px";
+
+
+            particleContainer.appendChild(
+                particle
+            );
+
+        }
+
+
+
+        /* =================================================
+           BUTTON RIPPLE EFFECT
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".main-button, .secondary-button"
+            )
+            .forEach(button => {
+
+
+                button.addEventListener(
+                    "click",
+                    function(e) {
+
+
+                        const ripple =
+                            document.createElement("span");
+
+
+                        ripple.style.position =
+                            "absolute";
+
+
+                        ripple.style.width =
+                            "10px";
+
+
+                        ripple.style.height =
+                            "10px";
+
+
+                        ripple.style.borderRadius =
+                            "50%";
+
+
+                        ripple.style.background =
+                            "rgba(255,255,255,0.4)";
+
+
+                        ripple.style.left =
+                            e.offsetX + "px";
+
+
+                        ripple.style.top =
+                            e.offsetY + "px";
+
+
+                        ripple.style.transform =
+                            "translate(-50%, -50%)";
+
+
+                        ripple.style.pointerEvents =
+                            "none";
+
+
+                        ripple.style.animation =
+                            "ripple 0.6s ease-out";
+
+
+                        this.appendChild(
+                            ripple
+                        );
+
+
+                        setTimeout(() => {
+
+                            ripple.remove();
+
+                        }, 600);
+
+                    }
+
+                );
+
+            });
+
+
+
+        /* =================================================
+           RIPPLE ANIMATION
+        ================================================== */
+
+        const rippleStyle =
+            document.createElement("style");
+
+
+        rippleStyle.innerHTML = `
+
+            @keyframes ripple {
+
+                from {
+
+                    width: 10px;
+
+                    height: 10px;
+
+                    opacity: 1;
+
+                }
+
+                to {
+
+                    width: 400px;
+
+                    height: 400px;
+
+                    opacity: 0;
+
+                }
+
+            }
+
+        `;
+
+
+        document.head.appendChild(
+            rippleStyle
+        );
+
+
+
+        /* =================================================
+           MOUSE PARALLAX EFFECT
+        ================================================== */
+
+        document.addEventListener(
+            "mousemove",
+            (e) => {
+
+
+                const x =
+                    (
+                        e.clientX /
+                        window.innerWidth -
+                        0.5
+                    ) * 20;
+
+
+                const y =
+                    (
+                        e.clientY /
+                        window.innerHeight -
+                        0.5
+                    ) * 20;
+
+
+                document.querySelector(
+                    ".orb-1"
+                ).style.transform =
+                    `translate(${x}px, ${y}px)`;
+
+
+                document.querySelector(
+                    ".orb-2"
+                ).style.transform =
+                    `translate(${-x}px, ${-y}px)`;
+
+            }
+        );
+
+
+    </script>
+
+</body>
+</html>
